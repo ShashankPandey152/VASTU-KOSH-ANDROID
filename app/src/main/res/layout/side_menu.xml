@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2D5D5">
+
+    <Button
+        android:id="@+id/lockerBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/sidemenu_onlick"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="20dp"
+        android:text="@string/locker"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="#204999"
+        app:layout_constraintTop_toBottomOf="@+id/lockerBtn" />
+
+
+    <Button
+        android:id="@+id/rentItBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sidemenu_onlick"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="20dp"
+        android:text="@string/rent"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lockerBtn"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="#204999"
+        app:layout_constraintTop_toBottomOf="@+id/rentItBtn" />
+
+    <Button
+        android:id="@+id/sellBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sidemenu_onlick"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="20dp"
+        android:text="@string/sell"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rentItBtn"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="#204999"
+        app:layout_constraintTop_toBottomOf="@+id/sellBtn" />
+
+    <Button
+        android:id="@+id/giveBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sidemenu_onlick"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="20dp"
+        android:text="@string/give"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellBtn"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="#204999"
+        app:layout_constraintTop_toBottomOf="@+id/giveBtn" />
+
+    <Button
+        android:id="@+id/aboutBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sidemenu_onlick"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="20dp"
+        android:text="@string/about"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/giveBtn"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="#204999"
+        app:layout_constraintTop_toBottomOf="@+id/aboutBtn" />
+
+    <Button
+        android:id="@+id/buyBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sidemenu_onlick"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="20dp"
+        android:text="@string/buy"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutBtn"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="#204999"
+        app:layout_constraintTop_toBottomOf="@+id/buyBtn" />
+
+    <Button
+        android:id="@+id/rentBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sidemenu_onlick"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="20dp"
+        android:text="@string/rent"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buyBtn"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="#204999"
+        app:layout_constraintTop_toBottomOf="@+id/rentBtn" />
+
+    <Button
+        android:id="@+id/contactBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sidemenu_onlick"
+        android:fontFamily="@font/montserrat"
+        android:paddingStart="20dp"
+        android:text="@string/contact"
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rentBtn"
+        tools:ignore="RtlSymmetry" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:background="#204999"
+        app:layout_constraintTop_toBottomOf="@+id/contactBtn" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/contactBtn"
+        app:srcCompat="@drawable/agenda_svgrepo_com"
+        tools:ignore="VectorDrawableCompat"
+        android:contentDescription="@string/logo" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rentBtn"
+        app:srcCompat="@drawable/for_rent_svgrepo_com" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/giveBtn"
+        app:srcCompat="@drawable/growth_svgrepo_com"
+        android:contentDescription="@string/logo" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lockerBtn"
+        app:srcCompat="@drawable/key_svgrepo_com" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sellBtn"
+        app:srcCompat="@drawable/online_shop_svgrepo_com"
+        android:contentDescription="@string/logo" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buyBtn"
+        app:srcCompat="@drawable/shop_svgrepo_com"
+        android:contentDescription="@string/logo" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rentItBtn"
+        app:srcCompat="@drawable/users_svgrepo_com" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/aboutBtn"
+        app:srcCompat="@drawable/website_svgrepo_com"
+        android:contentDescription="@string/logo" />
+
+</android.support.constraint.ConstraintLayout>

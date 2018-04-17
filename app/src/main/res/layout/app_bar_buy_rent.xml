@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vastukosh.client.android.BuyRentActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#204999"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="VASTU KOSH" />
+
+        <EditText
+            android:id="@+id/searchItem"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingStart="16dp"
+            android:background="@android:color/white"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/search"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@android:color/darker_gray"
+            tools:ignore="RtlSymmetry" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_buy_rent" />
+
+</android.support.design.widget.CoordinatorLayout>
