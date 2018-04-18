@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -28,6 +29,8 @@ import org.json.JSONException
 class BuyRentViewItemActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var sp: SharedPreferences
+
+    lateinit var getUid: String
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,6 +78,7 @@ class BuyRentViewItemActivity : AppCompatActivity(), NavigationView.OnNavigation
                 val isubtype = response.getString("isubtype")
                 val count = response.getString("counts")
                 val description = response.getString("descr")
+                getUid = response.getString("id")
                 var duration = ""
                 if(typePage.toInt() == 2) {
                     duration = response.getString("duration")
@@ -106,34 +110,51 @@ class BuyRentViewItemActivity : AppCompatActivity(), NavigationView.OnNavigation
         interestedBtn.setOnClickListener {
             if(interestPrice.text.toString() != "") {
                 Toast.makeText(this, "Sending mail to owner...", Toast.LENGTH_SHORT).show()
-                val url4 = "http://vastukosh-com.stackstaging.com/json/?interested=1"
-                val url5 = "&iid=" + id + "&oprice=" + interestPrice.text + "&price=" + price
-                val url6 = "&name=$uname&type=$typePage&id=$uid"
-                val urL = url4 + url5 + url6
-                val loginRequest1 = object: JsonObjectRequest(Method.GET, urL, null, Response.Listener { response ->
-                    try {
-                        val sent = response.getString("sent")
+                val iPrice: Long = java.lang.Long.parseLong(interestPrice.text.toString())
+                val priceString = price.split("Rs.")
+                val oPrice: Long = java.lang.Long.parseLong(priceString[1])
+                if(getUid == uid) {
+                    Toast.makeText(this, "This item belongs to you!", Toast.LENGTH_SHORT).show()
+                } else {
+                    if(iPrice in 1..oPrice) {
+                        val url4 = "http://vastukosh-com.stackstaging.com/json/?interested=1"
+                        val url5 = "&iid=" + id + "&oprice=" + interestPrice.text + "&price=" + price
+                        val url6 = "&name=$uname&type=$typePage&id=$uid"
+                        val urL = url4 + url5 + url6
+                        val loginRequest1 = object: JsonObjectRequest(Method.GET, urL, null, Response.Listener { response ->
+                            try {
+                                val sent = response.getString("sent")
 
-                        if(sent.toInt() == 1) {
-                            Toast.makeText(this, "Mail sent to owner successfully!", Toast.LENGTH_SHORT).show()
-                        } else if(sent.toInt() == -1) {
-                            Toast.makeText(this, "Sorry! There is some error, try again later.", Toast.LENGTH_SHORT).show()
+                                if(sent.toInt() == 1) {
+                                    Toast.makeText(this, "Mail sent to owner successfully!", Toast.LENGTH_SHORT).show()
+                                    val gotoItemPage = Intent(this, BuyRentActivity::class.java)
+                                    gotoItemPage.putExtra("id", uid)
+                                    gotoItemPage.putExtra("name", uname)
+                                    gotoItemPage.putExtra("first", first)
+                                    gotoItemPage.putExtra("pageType", typePage)
+                                    startActivity(gotoItemPage)
+                                } else if(sent.toInt() == -1) {
+                                    Toast.makeText(this, "Sorry! There is some error, try again later.", Toast.LENGTH_SHORT).show()
+                                }
+
+                                interestPrice.text.clear()
+
+                            } catch (e: JSONException) {
+                                Log.d("JSON", "EXC: " + e.localizedMessage)
+                            }
+                        }, Response.ErrorListener { error ->
+                            Log.d("ERROR", "Could not send mail: $error")
+                        }) {
+
+                            override fun getBodyContentType(): String {
+                                return "application/json; charset=utf-8"
+                            }
                         }
-
-                        interestPrice.text.clear()
-
-                    } catch (e: JSONException) {
-                        Log.d("JSON", "EXC: " + e.localizedMessage)
-                    }
-                }, Response.ErrorListener { error ->
-                    Log.d("ERROR", "Could not send mail: $error")
-                }) {
-
-                    override fun getBodyContentType(): String {
-                        return "application/json; charset=utf-8"
+                        Volley.newRequestQueue(this).add(loginRequest1)
+                    } else {
+                        Toast.makeText(this, "Invalid price!", Toast.LENGTH_SHORT).show()
                     }
                 }
-                Volley.newRequestQueue(this).add(loginRequest1)
 
             } else {
                 Toast.makeText(this, "Enter price!", Toast.LENGTH_SHORT).show()

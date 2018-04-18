@@ -218,6 +218,10 @@ class GiveActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun giveSubmitBtnClicked(view: View) {
+        val id = intent.getStringExtra("id")
+        val first = intent.getStringExtra("first")
+        val name = intent.getStringExtra("name")
+
         if(giveItemIdSpinner.selectedItem.toString() != "--Select ID--" &&
                 charitySpinner.selectedItem.toString() != "--Select Charity--" &&
                 countSpinner.selectedItem.toString() != "--Select Count--") {
@@ -232,6 +236,11 @@ class GiveActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                     if(donated.toInt() == 1) {
                         Toast.makeText(this, "Item will be sent to selected charity soon!", Toast.LENGTH_SHORT).show()
+                        val gotoHome = Intent(this, HomeActivity::class.java)
+                        gotoHome.putExtra("id", id)
+                        gotoHome.putExtra("name", name)
+                        gotoHome.putExtra("first", first)
+                        startActivity(gotoHome)
                     } else if(donated.toInt() == -1) {
                         Toast.makeText(this, "Oops, there was some error, please come back later!",
                                 Toast.LENGTH_SHORT).show()
