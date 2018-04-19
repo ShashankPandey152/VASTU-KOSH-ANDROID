@@ -38,6 +38,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        if(sp.getBoolean("logged", false)) {
+            val gotoHome = Intent(this, HomeActivity::class.java)
+            startActivity(gotoHome)
+        }
+    }
+
     fun loginBtnClicked(view: View) {
         var userName: String
         var userId: String

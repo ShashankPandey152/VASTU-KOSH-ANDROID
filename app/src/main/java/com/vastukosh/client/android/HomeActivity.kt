@@ -117,6 +117,14 @@ class HomeActivity : AppCompatActivity() {
         checkBlock()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val a = Intent(Intent.ACTION_MAIN)
+        a.addCategory(Intent.CATEGORY_HOME)
+        a.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(a)
+    }
+
     fun checkBlock() {
         val id = sp.getString("id", "")
         val url1 = "http://vastukosh-com.stackstaging.com/json/?blockCheck=1"
