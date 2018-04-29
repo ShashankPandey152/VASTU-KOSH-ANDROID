@@ -190,6 +190,10 @@ class LockerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
 
     fun profileSubmitBtnClicked(view: View) {
+        val uid = intent.getStringExtra("id")
+        val first = intent.getStringExtra("first")
+        val uname = intent.getStringExtra("name")
+
         val id = intent.getStringExtra("id")
         val name = intent.getStringExtra("name")
         if(profileItemNameText.text.toString() != "" && profileItemTypeSpinner.selectedItem.toString() != "--Select Type--"
@@ -212,6 +216,11 @@ class LockerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                         if(put == "1") {
                             Toast.makeText(this, "Your item is put to locker database, we will pick it up soon!",
                                     Toast.LENGTH_SHORT).show()
+                            val gotoHome = Intent(this, HomeActivity::class.java)
+                            gotoHome.putExtra("id", uid)
+                            gotoHome.putExtra("first", first)
+                            gotoHome.putExtra("name", uname)
+                            startActivity(gotoHome)
                         } else if(put == "-1") {
                             Toast.makeText(this, "Oops, there was some error. Please come back later!", Toast.LENGTH_SHORT).show()
                         }
