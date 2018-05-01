@@ -113,4 +113,6 @@
     <string name="description">Description</string>
     <string name="duration_in_months">Duration (in months)</string>
     <string name="submit">Submit</string>
+    <string name="storage_duration">Storage Duration</string>
+    <string name="any_item_stored_in_locker_should_be_kept_for_a_minimum_duration_of_one_1_month_before_retrieval">Any item stored in locker should be kept for a minimum duration of one (1) month before retrieval.</string>
 </resources>
