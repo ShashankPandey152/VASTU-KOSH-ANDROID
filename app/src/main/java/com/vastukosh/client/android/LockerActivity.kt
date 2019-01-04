@@ -202,7 +202,7 @@ class LockerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             Toast.makeText(this, "Putting into database...", Toast.LENGTH_SHORT).show()
             val count: Long = java.lang.Long.parseLong(profileItemCountText.text.toString())
             if(count in 1..25) {
-                val url1 = "http://vastukosh-com.stackstaging.com/json/?locker=1"
+                val url1 = "http://<website-link>/json/?locker=1"
                 val url2 = "&id=$id" + "&name=" + devoidOfSpace(name)
                 val url3 = "&iname=" + devoidOfSpace(profileItemNameText.text.toString()) + "&type=" +
                         profileItemTypeSpinner.selectedItem
