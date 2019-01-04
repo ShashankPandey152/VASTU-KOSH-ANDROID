@@ -169,7 +169,7 @@ import org.json.JSONException
                 Toast.makeText(this,"Invalid mobile number!", Toast.LENGTH_SHORT).show()
         }
         else {
-                val url1 = "http://vastukosh-com.stackstaging.com/json/?edit=1"
+                val url1 = "http://<website-link>/json/?edit=1"
                 val url2 = "&id=" + id + "&name=" + editName.text.toString()
                 val url3 =  "&address=" + editAddress.text.toString()
                 val url4 = "&location=" + editLocation.text.toString() + "&mobile=" + editMobileNumber.text.toString()
