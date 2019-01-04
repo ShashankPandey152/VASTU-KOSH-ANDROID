@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         if(logEmailText.text.toString() != "" && logPasswordText.text.toString() != "") {
             if(isEmailValid(logEmailText.text.toString())) {
                 Toast.makeText(this, "Logging in....", Toast.LENGTH_SHORT).show()
-                val url1 = "http://vastukosh-com.stackstaging.com/json/?log=1"
+                val url1 = "http://<website-link>/json/?log=1"
                 val url2 = "&email="+logEmailText.text+"&pass="+logPasswordText.text
                 val url = url1+url2
                 val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                         } else if(login.toInt() == 1) {
                             var verified: String
 
-                            val url3 = "http://vastukosh-com.stackstaging.com/json/?checkVerify=1"
+                            val url3 = "http://<website-link>/json/?checkVerify=1"
                             val url4 = "&email="+logEmailText.text
                             val urL = url3+url4
                             val loginRequest = object: JsonObjectRequest(Method.GET, urL, null, Response.Listener { response ->
