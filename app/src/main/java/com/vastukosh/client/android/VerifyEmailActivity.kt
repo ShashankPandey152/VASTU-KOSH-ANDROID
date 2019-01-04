@@ -20,7 +20,7 @@ class VerifyEmailActivity : AppCompatActivity() {
 
     fun resendBtnClicked(view: View) {
         Toast.makeText(this, "Sending mail...", Toast.LENGTH_SHORT).show()
-        val url1 = "http://vastukosh-com.stackstaging.com/json/?resend=1"
+        val url1 = "http://<website-link>/json/?resend=1"
         val url2 = "&id=90"
         val url = url1+url2
         val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
