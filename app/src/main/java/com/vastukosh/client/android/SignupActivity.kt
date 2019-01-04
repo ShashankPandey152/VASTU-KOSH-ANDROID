@@ -58,7 +58,7 @@ class SignupActivity : AppCompatActivity() {
                 Toast.makeText(this, errorString, Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Signing you up....", Toast.LENGTH_SHORT).show()
-                val url1 = "http://vastukosh-com.stackstaging.com/json/?log=2"
+                val url1 = "http://<website-link>/json/?log=2"
                 val url2 = "&email=" + signEmailText.text + "&mobile=" + signMobileText.text
                 val url3 = "&name=" + devoidOfSpace(signNameText.text.toString()) + "&location="
                 val url4 = devoidOfSpace(signLocationText.text .toString())
