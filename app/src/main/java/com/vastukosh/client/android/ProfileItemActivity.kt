@@ -86,7 +86,7 @@ class ProfileItemActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         ParseJSONInfo(pageType, iid, price)
 
         if(pageType != "4") {
-            val url1 = "http://vastukosh-com.stackstaging.com/json/?countReturn=1"
+            val url1 = "http://<website-link>/json/?countReturn=1"
             val url2 = "&iid=" + iid
             val url = url1+url2
             val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
@@ -133,7 +133,7 @@ class ProfileItemActivity : AppCompatActivity(), NavigationView.OnNavigationItem
                 try {
                     if(profileItemCountSpinner.selectedItem.toString() != "--Select Count--") {
                         Toast.makeText(this, "Sending mail...", Toast.LENGTH_SHORT).show()
-                        val url1 = "http://vastukosh-com.stackstaging.com/json/?return=1"
+                        val url1 = "http://<website-link>/json/?return=1"
                         val url2 = "&iid=$iid&count=$count"
                         val url = url1+url2
                         val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
@@ -177,7 +177,7 @@ class ProfileItemActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             profileDealDoneBtn.setOnClickListener {
                 if(profileEmailText.text.toString() != "") {
                     Toast.makeText(this, "Sending mail...", Toast.LENGTH_SHORT).show()
-                    val url1 = "http://vastukosh-com.stackstaging.com/json/?deal=1"
+                    val url1 = "http://<website-link>/json/?deal=1"
                     val url2 = "&iid=$iid&email=" + profileEmailText.text + "&price=" + price
                     val url = url1+url2
                     val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
@@ -309,18 +309,18 @@ class ProfileItemActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     fun ParseJSONInfo(pageType: String, iid: String, Price: String) {
         try {
             Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT).show()
-            var  url1 = "http://vastukosh-com.stackstaging.com/json/?profile=2&price=" + Price
+            var  url1 = "http://<website-link>/json/?profile=2&price=" + Price
             if(pageType == "4") {
-                url1 = "http://vastukosh-com.stackstaging.com/json/?profile=3"
+                url1 = "http://<website-link>/json/?profile=3"
             } else if(pageType == "1") {
-                url1 = "http://vastukosh-com.stackstaging.com/json/?profile=4"
+                url1 = "http://<website-link>/json/?profile=4"
             }
             val url2 = "&iid=" + iid
             val url = url1+url2
             val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
                 try {
                     var image = response.getString("image")
-                    image = "http://vastukosh-com.stackstaging.com/img/items/" + image
+                    image = "http://<website-link>/img/items/" + image
 
                     Glide.with(this).load(image).into(profileItemImage)
 
