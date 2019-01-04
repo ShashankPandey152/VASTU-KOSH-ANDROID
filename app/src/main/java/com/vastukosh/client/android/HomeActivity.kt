@@ -127,7 +127,7 @@ class HomeActivity : AppCompatActivity() {
 
     fun checkBlock() {
         val id = sp.getString("id", "")
-        val url1 = "http://vastukosh-com.stackstaging.com/json/?blockCheck=1"
+        val url1 = "http://<website-link>/json/?blockCheck=1"
         val url2 = "&id=" + id
         val url = url1+url2
         val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
