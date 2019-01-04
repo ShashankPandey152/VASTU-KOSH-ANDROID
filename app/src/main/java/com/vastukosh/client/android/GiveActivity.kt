@@ -62,7 +62,7 @@ class GiveActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val hashMap: HashMap<String, String> = hashMapOf()
 
-        val url1 = "http://vastukosh-com.stackstaging.com/json/?give=1"
+        val url1 = "http://<website-link>/json/?give=1"
         val url2 = "&id=" + id
         val url = url1+url2
         val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
@@ -226,7 +226,7 @@ class GiveActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 charitySpinner.selectedItem.toString() != "--Select Charity--" &&
                 countSpinner.selectedItem.toString() != "--Select Count--") {
             Toast.makeText(this, "Donating item...", Toast.LENGTH_SHORT).show()
-            val url1 = "http://vastukosh-com.stackstaging.com/json/?give=2"
+            val url1 = "http://<website-link>/json/?give=2"
             val url2 = "&iid=" + iid + "&charity=" + charitySpinner.selectedItem
             val url3 = "&count=" + countSpinner.selectedItem
             val url = url1 + url2 + url3
