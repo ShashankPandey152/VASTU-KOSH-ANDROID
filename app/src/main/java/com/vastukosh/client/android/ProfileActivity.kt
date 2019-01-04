@@ -58,7 +58,7 @@ class ProfileActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         val sellList = arrayListOf<Items>()
         val giveList = arrayListOf<Items>()
         var idpic: String
-        val url1 = "http://vastukosh-com.stackstaging.com/json/?profile=1"
+        val url1 = "http://<website-link>/json/?profile=1"
         val url2 = "&id=" + id
         val url = url1+url2
         val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Listener { response ->
@@ -69,7 +69,7 @@ class ProfileActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 userMobile.text = "Mobile: " + response.getString("mobile")
                 userEmail.text = "Email: " + response.getString("email")
                 userAdhaarNumber.text = "Adhaar: " + response.getString("idno")
-                idpic = "http://vastukosh-com.stackstaging.com/img/id/" + response.get("idpic")
+                idpic = "http://<website-link>/img/id/" + response.get("idpic")
                 Glide.with(this).load(idpic).into(profileAdhaarPicture)
 
                 var Id = response.getJSONArray("iid")
