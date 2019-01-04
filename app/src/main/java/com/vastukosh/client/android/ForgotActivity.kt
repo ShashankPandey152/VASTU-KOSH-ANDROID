@@ -27,7 +27,7 @@ class ForgotActivity : AppCompatActivity() {
         if(forgotEmailText.text.toString() != "") {
             if(isEmailValid(forgotEmailText.text.toString())) {
                 Toast.makeText(this, "Sending mail...", Toast.LENGTH_SHORT).show()
-                val url1 = "http://vastukosh-com.stackstaging.com/json/?forgot=1"
+                val url1 = "http://<website-link>/json/?forgot=1"
                 val url2 = "&email="+forgotEmailText.text
                 val url = url1+url2
                 val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Listener { response ->
