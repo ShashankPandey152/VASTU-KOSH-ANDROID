@@ -139,7 +139,7 @@ class BuyRentActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
             var adapter : AdsAdapter
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 if(searchItem.text.toString() != "") {
-                    val url1 = "http://vastukosh-com.stackstaging.com/json/?search=" + pageType
+                    val url1 = "http://<website-link>/json/?search=" + pageType
                     val url2 = "&sname=" + searchItem.text.toString()
                     val url = url1 + url2
                     val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
@@ -352,7 +352,7 @@ class BuyRentActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT).show()
         var adapter: AdsAdapter
         val listAd = arrayListOf<Ads>()
-        val url1 = "http://vastukosh-com.stackstaging.com/json/?filter=" + type
+        val url1 = "http://<website-link>/json/?filter=" + type
         val url2 = "&select=$pageType&itype=$itype"
         val url3 = "&isubtype=" + isubtype
         val url4 = "&sname=" + sname
@@ -421,7 +421,7 @@ class BuyRentActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT).show()
         var adapter: AdsAdapter
         val listAd = arrayListOf<Ads>()
-        val url1 = "http://vastukosh-com.stackstaging.com/json/?images=" + pageType
+        val url1 = "http://<website-link>/json/?images=" + pageType
         val loginRequest = object: JsonObjectRequest(Method.GET, url1, null, Response.Listener { response ->
             try {
                 val iname = response.getJSONArray("iname")
