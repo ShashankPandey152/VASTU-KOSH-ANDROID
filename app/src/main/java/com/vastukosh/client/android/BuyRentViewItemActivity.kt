@@ -68,7 +68,7 @@ class BuyRentViewItemActivity : AppCompatActivity(), NavigationView.OnNavigation
             adItemPrice.text = "Price (per month): $price"
         }
 
-        val url1 = "http://vastukosh-com.stackstaging.com/json/?details=" + typePage
+        val url1 = "http://<website-link>/json/?details=" + typePage
         val url2 = "&iid=$id&price=$price"
         val url = url1+url2
         val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Response.Listener { response ->
@@ -117,7 +117,7 @@ class BuyRentViewItemActivity : AppCompatActivity(), NavigationView.OnNavigation
                     Toast.makeText(this, "This item belongs to you!", Toast.LENGTH_SHORT).show()
                 } else {
                     if(iPrice in 1..oPrice) {
-                        val url4 = "http://vastukosh-com.stackstaging.com/json/?interested=1"
+                        val url4 = "http://<website-link>/json/?interested=1"
                         val url5 = "&iid=" + id + "&oprice=" + interestPrice.text + "&price=" + price
                         val url6 = "&name=$uname&type=$typePage&id=$uid"
                         val urL = url4 + url5 + url6
