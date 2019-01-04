@@ -170,7 +170,7 @@ class ChangePasswordActivity : AppCompatActivity(), NavigationView.OnNavigationI
         if(oldPass.text.toString() != "" && newPass.text.toString() != "" && confirmPass.text.toString() != "") {
             if (newPass.text.toString() == confirmPass.text.toString()) {
                 if(newPass.text.toString().length < 8) {
-                    val url1 = "http://vastukosh-com.stackstaging.com/json/?pass=1"
+                    val url1 = "http://<website-link>/json/?pass=1"
                     val url2 = "&id=" + id + "&opassword=" + oldPass.text.toString()
                     val url3 = "&password=" + newPass.text.toString()
                     val url = url1 + url2 + url3
