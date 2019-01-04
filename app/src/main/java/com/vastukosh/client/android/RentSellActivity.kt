@@ -77,7 +77,7 @@ class RentSellActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         val hashMap: HashMap<String, String> = hashMapOf()
 
-        val url1 = "http://vastukosh-com.stackstaging.com/json/?items=1"
+        val url1 = "http://<website-link>/json/?items=1"
         val url2 = "&id=" + id
         val url = url1+url2
         val loginRequest = object: JsonObjectRequest(Method.GET, url, null, Listener { response ->
@@ -260,7 +260,7 @@ class RentSellActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     if(durationText.text.toString() == "0") {
                         Toast.makeText(this, "Minimum duration is 1 month!", Toast.LENGTH_SHORT).show()
                     } else {
-                        val url1 = "http://vastukosh-com.stackstaging.com/json/?put=1&type=" + pageType
+                        val url1 = "http://<website-link>/json/?put=1&type=" + pageType
                         val url2 = "&iid=$iid&duration="
                         val url3 = durationText.text.toString() + "&price=" + priceText.text.toString()
                         val url4 = "&count=" + itemCountSpinner.selectedItem + "&descr=" + descriptionText.text
@@ -295,7 +295,7 @@ class RentSellActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                     Toast.makeText(this, "Complete the form!", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                val url1 = "http://vastukosh-com.stackstaging.com/json/?put=1&type=2"
+                val url1 = "http://<website-link>/json/?put=1&type=2"
                 val url2 = "&iid=" + iid
                 val url3 = "&price=" + priceText.text.toString()
                 val url4 = "&count=" + itemCountSpinner.selectedItem + "&descr=" + descriptionText.text
